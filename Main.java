@@ -23,12 +23,30 @@ public class Main
   public static boolean hasDuplicates(int[] arr)
   {
     // replace with your code
+    for (int currentI=0; currentI<arr.length(); currentI++){
+      for (int i=0; i<arr.length(); i++){
+          if ((arr[currentI]==(arr[i])) && (i!=currentI)){
+            return true;
+          } 
+      }
+    }
     return false;
   }
 
   public static String findMode(String[] arr)
   {
-    // replace with your code
-    return null;
+    int count=0;
+    int max=0;
+    for (int currentI=0; currentI<arr.length(); currentI++){ //count occurence of each value
+      for (int i=0; i<arr.length(); i++){
+        if ((i!=currentI)&&(arr[currentI]==(arr[i]))){ //same value is found but not the same index
+          count++; //count for current value
+        }
+      }
+    if (count>max){
+      max=count;
+    }
+    }
+  return max;
   }
 }
